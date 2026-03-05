@@ -1,10 +1,12 @@
-Тестирование через Postman
+## Тестирование через Postman
 Готовые коллекции запросов для ручного тестирования API находятся в директории:
 src/main/resources/postman-test/
 
 также в этой папке хранятся скрины самих запросов с таблица CSV
 
-Структура проекта
+## Структура проекта
+
+```
 src/main/java/com/example/contractspayments/
 ├── controller/
 │   ├── ContractController.java
@@ -32,3 +34,4 @@ src/main/resources/
 ├── postman-test/
 ├── static/
 └── templates/
+```
