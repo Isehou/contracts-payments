@@ -11,4 +11,5 @@ public class PaymentDtoResponse {
     private Long id;
     private BigDecimal amount;
     private LocalDateTime createdAt;
+    private Long contractId;
 }

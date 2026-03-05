@@ -24,5 +24,5 @@ public class Payment {
     private Contract contract;
 
     private BigDecimal amount;
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 }

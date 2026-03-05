@@ -26,19 +26,38 @@ public class ContractService {
 
         Contract saved = contractRepository.save(contract);
 
+        return dtoCode(saved);
+    }
+
+    @Transactional(readOnly = true)
+    public ContractDtoResponse getContractById(Long id) {
+
+        Contract contract = contractRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Договор по ID не найден"));
+
+        return dtoCode(contract);
+    }
+
+    @Transactional(readOnly = true)
+    public List<ContractDtoResponse> getAllContracts() {
+        return contractRepository.findAll()
+                .stream()
+                .map(this::dtoCode)
+                .toList();
+    }
+
+    private ContractDtoResponse dtoCode(Contract contract) {
         ContractDtoResponse response = new ContractDtoResponse();
 
-
+        response.setId(contract.getId());
+        response.setNumber(contract.getNumber());
+        response.setTotalAmount(contract.getTotalAmount());
+        response.setCreatedAt(contract.getCreatedAt());
+        return response;
     }
 
-    @Transactional(readOnly = true)
-    public Contract getContractById(Long id) {
+    public Contract throwExeption(Long id) {
         return contractRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Договор по ID не найден"));
-    }
-
-    @Transactional(readOnly = true)
-    public List<Contract> getAllContracts() {
-        return contractRepository.findAll();
+                .orElseThrow(() -> new RuntimeException("Договор не найден" + id));
     }
 }

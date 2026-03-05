@@ -13,5 +13,8 @@ public class PaymentDtoRequest {
 
     @NotNull(message = "Сумма обязательна")
     @Positive(message = "Сумма не должна быть минусовой")
-    private BigDecimal totalAmount;
+    private BigDecimal amount;
+
+    @NotNull(message = "ID договора обязателен")
+    private Long contractId;
 }

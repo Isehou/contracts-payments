@@ -11,6 +11,6 @@ public class ContractDtoResponse {
 
     private Long id;
     private String number;
-    private BigDecimal amount;
+    private BigDecimal totalAmount;
     private LocalDateTime createdAt;
 }
