@@ -1,6 +1,6 @@
 ## Тестирование через Postman
 Готовые коллекции запросов для ручного тестирования API находятся в директории:
-src/main/resources/postman-test/
+postman-test/
 
 также в этой папке хранятся скрины самих запросов с таблица CSV
 
@@ -30,8 +30,6 @@ src/main/java/com/example/contractspayments/
 │   └── PaymentService.java
 └── ContractsPaymentsApplication.java
 
-src/main/resources/
 ├── postman-test/
-├── static/
-└── templates/
+├── src/
 ```
